@@ -1,0 +1,48 @@
+Command line (git bash) instructions
+
+Setting things up:
+
+* Fork this repo in github
+
+* Clone the repo to a folder on your machine (using netbeans, or on the command line):
+git clone https://github.com/ACIT4850-Samuel-Wilson-Michael/Example.git
+
+* "origin" is YOUR forked copy of the repo on github. We need to tell git about the repo you forked from, and call it "upstream":
+git remote add upstream https://github.com/ACIT4850-Samuel-Wilson-Michael/Example
+
+
+
+Making a change:
+
+* Make a new feature branch and switch to it:
+git checkout -b branch_name
+
+* Make your changes (editing/creating files in your local folder).
+
+* Check which files we have changed:
+git status
+
+* Files listed in red are not "staged" for committing, we need to "add" them. You can add files by name, or use * as a wildcard (just "*" will stage all changed files)
+git add *
+
+* Commit your changes, and add a nice commit message (using the -m switch, followed by a quoted string):
+git commit -m "First commit --Samuel"
+
+* Push the changes to YOUR github repo ("origin"). We need to tell it about your branch since it doesn't know about it:
+git push origin branch_name
+
+* Verify that your changes are now on your github repo, and issue a Pull Request.
+
+* After your Pull Request is incorporated or dismissed, you need to delete your branch in two places.
+
+* Delete your branch on your github repo (click on "Branches" and click the red trashcan next to the feature branch).
+
+* You need to switch to another branch before you can delete the local one (should use the "develop" branch on our assignment):
+git checkout master
+
+* Delete the feature branch
+git branch -D branch_name
+
+* Sync with the upstream repo
+git pull upstream
+
